@@ -1,16 +1,14 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { RandomService } from 'crawler';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private randomService: RandomService,
-  ) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
   getHello(): string {
-    return this.appService.getHello(this.randomService.generate());
+    this.appService.subscribeNewBlocks();
+
+    return 'Hello World!';
   }
 }

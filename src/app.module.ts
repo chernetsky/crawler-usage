@@ -8,8 +8,9 @@ import { LoggerModule } from './logger/logger.module';
   imports: [
     LoggerModule,
     CrawlerModule.forRoot({
+      wsProviderUrl: 'wss://some.wss.url',
       min: -10,
-      max: 10,
+      max: 50,
     }),
   ],
   controllers: [AppController],
