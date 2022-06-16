@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CrawlerModule } from 'crawler';
 import { LoggerModule } from './logger/logger.module';
+import 'dotenv/config';
 
 @Module({
   imports: [
     LoggerModule,
     CrawlerModule.forRoot({
-      wsProviderUrl: 'wss://some.wss.url',
+      wsProviderUrl: process.env.WS_PROVIDER_URL || 'wss://some.wss.url',
+      typeProvider: process.env.TYPE_PROVIDER,
       min: -10,
       max: 50,
     }),
