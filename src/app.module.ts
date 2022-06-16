@@ -7,11 +7,12 @@ import { LoggerModule } from './logger/logger.module';
 @Module({
   imports: [
     LoggerModule,
-    CrawlerModule.forRoot({
-      wsProviderUrl: 'wss://some.wss.url',
-      min: -10,
-      max: 50,
-    }),
+    CrawlerModule,
+    // CrawlerModule.forRoot({
+    //   wsProviderUrl: 'wss://some.wss.url',
+    //   min: -10,
+    //   max: 50,
+    // }),
   ],
   controllers: [AppController],
   providers: [AppService],

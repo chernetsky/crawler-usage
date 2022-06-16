@@ -5,7 +5,8 @@ CRWLR_PROJECT='/home/graph/unique/crawler'
 CRWLR_MODULE_DIR='node_modules/crawler'
 
 echo 'Cleanup...'
-rm -rf ${CRWLR_MODULE_DIR}/*
+rm -rf ${CRWLR_MODULE_DIR}
+mkdir ${CRWLR_MODULE_DIR}
 
 echo 'Build package...'
 cd $CRWLR_PROJECT
