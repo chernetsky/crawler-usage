@@ -10,8 +10,8 @@ export class AppService {
 
     console.log('Start new blocks listening');
     blocksObservable.subscribe({
-      next(x) {
-        console.log('got value ' + x);
+      next(blockData) {
+        console.log(blockData);
       },
       error(err) {
         console.error('something wrong occurred: ' + err);
