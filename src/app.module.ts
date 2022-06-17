@@ -10,9 +10,6 @@ import 'dotenv/config';
     LoggerModule,
     CrawlerModule.forRoot({
       wsProviderUrl: process.env.WS_PROVIDER_URL || 'wss://some.wss.url',
-      typeProvider: process.env.TYPE_PROVIDER,
-      min: -10,
-      max: 50,
     }),
   ],
   controllers: [AppController],
