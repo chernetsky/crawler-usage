@@ -5,11 +5,11 @@ import { CrawlerApiService } from 'crawler';
 export class AppService {
   constructor(private crawlerApiService: CrawlerApiService) {}
 
-  subscribeNewBlocks() {
-    const blocks = this.crawlerApiService.subscribeNewBlocks();
+  async subscribeNewBlocks() {
+    const blocksObservable = await this.crawlerApiService.subscribeNewBlocks();
 
     console.log('Start new blocks listening');
-    blocks.subscribe({
+    blocksObservable.subscribe({
       next(x) {
         console.log('got value ' + x);
       },
