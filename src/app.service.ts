@@ -21,4 +21,23 @@ export class AppService {
       },
     });
   }
+
+  async getBlockByNumber(blockNumber) {
+    const blocksObservable = await this.crawlerApiService.getBlockByNumber(
+      blockNumber,
+    );
+
+    console.log('Start new blocks listening');
+    blocksObservable.subscribe({
+      next(blockData) {
+        console.log(blockData);
+      },
+      error(err) {
+        console.error('something wrong occurred: ' + err);
+      },
+      complete() {
+        console.log('Observable completed.');
+      },
+    });
+  }
 }

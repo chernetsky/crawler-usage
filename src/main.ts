@@ -7,8 +7,10 @@ async function bootstrap() {
 
   const appService = app.get(AppService);
 
-  await appService.subscribeNewBlocks();
+  // await appService.subscribeNewBlocks();
 
-  await app.listen(3000);
+  await appService.getBlockByNumber(4436);
+
+  // await app.listen(3000);
 }
 bootstrap();
