@@ -18,7 +18,7 @@ ls -1 crawler-*.tgz | xargs -L1 -I{} cp {} $CURRENT_PWD/$CRWLR_MODULE_DIR/crawle
 
 echo 'Unpack...'
 cd $CURRENT_PWD/$CRWLR_MODULE_DIR
-tar -xzvf ./crawler.tgz
+tar -xzf ./crawler.tgz
 mv ./package/* .
 
 echo 'Succeed!'
