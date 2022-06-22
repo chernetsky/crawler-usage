@@ -9,7 +9,7 @@ async function bootstrap() {
 
   // await appService.subscribeNewBlocks();
 
-  await appService.getBlockByNumber(4436);
+  await appService.getBlockByNumber(38500);
 
   // await app.listen(3000);
 }
