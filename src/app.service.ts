@@ -23,21 +23,11 @@ export class AppService {
   }
 
   async getBlockByNumber(blockNumber) {
-    const blocksObservable = await this.crawlerApiService.getBlockByNumber(
+    const blockData = await this.crawlerApiService.getBlockByNumber(
       blockNumber,
     );
 
-    console.log('Start new blocks listening');
-    blocksObservable.subscribe({
-      next(blockData) {
-        console.log(blockData);
-      },
-      error(err) {
-        console.error('something wrong occurred: ' + err);
-      },
-      complete() {
-        console.log('Observable completed.');
-      },
-    });
+    console.log(`Got block by number ${blockNumber}`);
+    console.log(blockData);
   }
 }
