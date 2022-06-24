@@ -28,6 +28,6 @@ export class AppService {
     );
 
     console.log(`Got block by number ${blockNumber}`);
-    console.log(blockData);
+    // console.log(blockData);
   }
 }
